@@ -1,0 +1,45 @@
+:root {
+	font-size: 10px;
+}
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: rgb(212, 205, 190);
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container {
+	border-radius: 3.5rem;
+	height: 35rem;
+	width: 28rem;
+	background: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container input {
+	border: none;
+	border-radius: 1rem;
+	height: 3rem;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+.container button {
+	background-color: white;
+	cursor: pointer;
+	border: none;
+	border-radius: 1rem;
+	margin: 0.2rem;
+	height: 5rem;
+	width: 5rem;
+}
+.calculator button.fnc {
+	background-color: orange;
+}
