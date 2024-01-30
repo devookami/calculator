@@ -1,4 +1,5 @@
 const screen = document.querySelector("#screen");
+let history = document.querySelector("#history");
 const btns = document.querySelectorAll("button");
 let firstNum;
 let secondNum;
@@ -15,19 +16,18 @@ btns.forEach((btn) => {
 			firstNum = screen.value;
 			screen.value = "";
 			operator = btn.value;
+			history.value = firstNum + operator; 
 		} else if (btn.value === "clear") {
 			screen.value = "";
 			firstNum = 0;
 			secondNum = 0;
 			operator = "";
+			history.value = "";
 		} else if (btn.value === "=") {
-			console.log(firstNum);
 			secondNum = screen.value;
+			history.value += secondNum;
 			screen.value = operate(operator, firstNum, secondNum);
-			firstNum = operate(operator, firstNum, secondNum);	
-			console.log(firstNum);
-			console.log(operator);
-			console.log(secondNum);
+			firstNum = operate(operator, firstNum, secondNum);
 		} else {
 			screen.value += btn.value;
 		}
@@ -38,7 +38,7 @@ function add(a, b) {
 	return a + b;
 }
 function subtract(a, b) {
-	return a - b;``
+	return a - b;
 }
 function multiply(a, b) {
 	return a * b;
