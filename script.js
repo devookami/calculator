@@ -16,7 +16,7 @@ btns.forEach((btn) => {
 			firstNum = screen.value;
 			screen.value = "";
 			operator = btn.value;
-			history.value = firstNum + operator; 
+			history.value = firstNum + operator;
 		} else if (btn.value === "clear") {
 			screen.value = "";
 			firstNum = 0;
@@ -25,7 +25,7 @@ btns.forEach((btn) => {
 			history.value = "";
 		} else if (btn.value === "=") {
 			secondNum = screen.value;
-			history.value += secondNum;
+			history.value = firstNum + operator + secondNum;
 			screen.value = operate(operator, firstNum, secondNum);
 			firstNum = operate(operator, firstNum, secondNum);
 		} else {
