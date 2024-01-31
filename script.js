@@ -33,8 +33,12 @@ btns.forEach((btn) => {
 			firstNum = operate(operator, firstNum, secondNum);
 		} else {
 			if (btn.value === ".") {
+				// ako vec postoji . onda ukloni . i poslednji br.
 				if (screen.value.includes(".")) {
-					screen.value = screen.value.substring(0, screen.value.length - 1);
+					screen.value = screen.value.substring(
+						0,
+						screen.value.length - 1
+					);
 				}
 				screen.value = screen.value - 0;
 			}
@@ -69,11 +73,11 @@ function operate(operator, a, b) {
 		case "x":
 			return multiply(firstNum, secondNum);
 		case "/":
-			if (b === 0) return null;
+			if (b === 0) return 0;
 			else return divide(firstNum, secondNum);
 		case "%":
 			return percent(firstNum, secondNum);
 		default:
-			return null;
+			return 0;
 	}
 }
